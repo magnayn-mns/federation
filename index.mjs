@@ -63,16 +63,33 @@ const gateway = new ApolloGateway({
 
     supergraphSdl: new IntrospectAndCompose({
     subgraphs: [
-       { name: 'price', url: 'https://dev.nonprod.price.api.mnscorp.net/graphql' },  
+    // { name: 'price', url: 'https://dev.nonprod.price.api.mnscorp.net/graphql' },
+     {name:'price', url:'https://pr-817-ddbf062c.azurewebsites.net/graphql'},
+     { name: 'customerorder', url: 'https://dev.nonprod.customerorder.api.mnscorp.net/graphql' },
+     { name: 'product', url: 'https://dev.nonprod.product.api.mnscorp.net/graphql' },
+    
+    
+    // { name: 'price-enquiry', url: 'https://pr-48-6d378afa.azurewebsites.net/graphql' }
+    { name: 'price-enquiry', url: 'http://localhost:8080/graphql'}
+
+
      //  { name: 'customerorder', url: 'https://pr-441-211884f4.azurewebsites.net/graphql'}
-      { name: 'customerorder', url: 'https://dev.nonprod.customerorder.api.mnscorp.net/graphql' },
+   
+
+  // { name: 'customerorder', url: 'http://localhost:8100/graphql' }
+
    //     {name:'customerorder', url:'https://pr-439-211884f4.azurewebsites.net/graphql'},
      //   {name:'price', url:'https://pr-202-ddbf062c.azurewebsites.net/graphql'}
       //   { name: 'price', url: 'http://localhost:8081/graphql' },      
+
+
+     //    { name: 'l1', url: 'http://localhost:4000/graphql' },
+     //   { name: 'l2', url: 'http://localhost:4001/graphql' },
+       
     ],
     
     introspectionHeaders: {
-     Authorization: 'Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjE5NzA0MzAyNjQ1MzYwMjc5MDgyMjE2MTk4MDQ1Nzg0NTM0NTg4OSIsInR5cCI6IkpXVCJ9.eyJhY3IiOiI1MCIsImFpZCI6ImRlZmF1bHQiLCJhbXIiOlsicHdkIl0sImF1ZCI6WyIzNDAzOGIzMjQwZDI0MjNmYTYzYjBiNWY2Yjg1NDFjYiIsInNwaWZmZTovL2Rldi1tYXJrc2FuZHNwZW5jZXIuZXUuYXV0aHouY2xvdWRlbnRpdHkuaW8vZGV2LW1hcmtzYW5kc3BlbmNlci9kZWZhdWx0L2M2MXY1OGw5NTg1YW01ODAwYWgwIl0sImNpZCI6IjM0MDM4YjMyNDBkMjQyM2ZhNjNiMGI1ZjZiODU0MWNiIiwiZXhwIjoxNjc3MDY2MjEzLCJpYXQiOjE2NzcwNjQ3MTIsImlkcCI6ImM2MXY4NDlncGdpa2xqcDlkYXZnIiwiaXNzIjoiaHR0cHM6Ly9hdXRoLWRldi5jaWFtLm1hcmtzYW5kc3BlbmNlci5jb20vZGVmYXVsdCIsImp0aSI6ImZhNDgzNzA2LWEyNjMtNDI2MS1iMGY2LWUyNWE1MGFkOTc5OSIsIm5iZiI6MTY3NzA2NDcxMiwicmVxdWVzdGVkX2FjciI6IjUwIiwic2NwIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwic3RvcmUubWFya3NhbmRzcGVuY2VyIl0sInN0IjoicHVibGljIiwic3RvcmUiOiJVS19ESUdJVEFMIiwic3ViIjoiNTA0NDIxOTcxIiwidGlkIjoiZGV2LW1hcmtzYW5kc3BlbmNlciIsIndjX3Rva2VuIjoiMjU3MjM4NzMlMkN2SWZiOWdQWWpQakpaJTJCb2hwdVk4V3JQQjZJRFFXaVgwM0t4T0pkT201S1VhMkpnTVRscWxEeGFKa3ZrTTBKb3IwNGdQY3FyUld0TWc1OUFrVkJGNVJVYjNDNnFKN1dabCUyQlJFTnZRVU5qb1RnWE5WJTJGZiUyRlpXY3NnZ1pHRnV1WWJzUHY4TWJXJTJCVllpJTJGWk5JcTVjZmZsemxnc3I4SXFmWk44TG54RlFwYW5pM01weFFoY3kwJTJCNWVNVkU5dTVjZ0JTNEIlMkJvQ29FZjFhTERaYXBFeGY1RDBoeEdydHRWa0g2NDdJN1MxTmV0aWNPbW56JTJGbjh3UVcxVEFXNzJ3SFBoclN6OUJGYUtoNmp5am9kWHdIYSUyRngyTzl3JTNEJTNEIiwid2NfdHJ1c3RlZF90b2tlbiI6IjI1NzIzODczJTJDMmpMQnFIR3JDZWl5blpCU0UlMkJnd0gxM2dsZG9qUERhcjhHeElhNXhObXp3JTNEIn0.0j2DvWtOYhTYppcmvEfz0N0k4rVz7mRXabO-XWLV7XRo5wtOV5CFxE31xv1n3Zkd7jhZc_rzSw-Jeou1pW-u0A'
+     Authorization: 'Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjE5NzA0MzAyNjQ1MzYwMjc5MDgyMjE2MTk4MDQ1Nzg0NTM0NTg4OSIsInR5cCI6IkpXVCJ9.eyJhY3IiOiI1MCIsImFpZCI6ImRlZmF1bHQiLCJhbXIiOlsicHdkIl0sImF1ZCI6WyIzNDAzOGIzMjQwZDI0MjNmYTYzYjBiNWY2Yjg1NDFjYiIsInNwaWZmZTovL2F1dGgtZGV2LmNpYW0ubWFya3NhbmRzcGVuY2VyLmNvbS9kZWZhdWx0L2M2dTk1NjN2ZWR2NmVsZWlvZnRnIiwic3BpZmZlOi8vZGV2LW1hcmtzYW5kc3BlbmNlci5ldS5hdXRoei5jbG91ZGVudGl0eS5pby9kZXYtbWFya3NhbmRzcGVuY2VyL2RlZmF1bHQvYzYxdjU4bDk1ODVhbTU4MDBhaDAiXSwiYXV0aF90aW1lIjoxNzAzMDg4MDQyLCJjaWQiOiIzNDAzOGIzMjQwZDI0MjNmYTYzYjBiNWY2Yjg1NDFjYiIsImV4cCI6MTcwMzA4OTU0NSwiaWF0IjoxNzAzMDg4MDQ0LCJpZHAiOiJjNjF2ODQ5Z3BnaWtsanA5ZGF2ZyIsImlzcyI6Imh0dHBzOi8vYXV0aC1kZXYuY2lhbS5tYXJrc2FuZHNwZW5jZXIuY29tL2RlZmF1bHQiLCJqdGkiOiI3NTVjZTE4Mi04NjZmLTRkNWQtYThmNS1hNGVkZDQzYjY2ZTQiLCJuYmYiOjE3MDMwODgwNDQsInJlcXVlc3RlZF9hY3IiOiI1MCIsInNjcCI6WyJtYW5kcyIsIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwic3RvcmUubWFya3NhbmRzcGVuY2VyIl0sInN0IjoicHVibGljIiwic3RvcmUiOiJVS19ESUdJVEFMIiwic3ViIjoiNTA0NDIxOTcxIiwidGlkIjoiZGV2LW1hcmtzYW5kc3BlbmNlciIsIndjX3Rva2VuIjoiMjU3MjM4NzMlMkNGR0xMTTV2JTJGMk1LQ1RrS3R4bHRHbWRlUU5mVG9lcHBqeXIwdG5zRHdlenBmOHJ4OHduTFJ5MnBzT080TmRRcHk5SHZuJTJGUXZhWnVXazJsb2pVQXZlU1dvc3dQSUdYeVNOMmpCRXVQNXlqdVB5MjRkTmt6RTJ3Q1hGWDlHaCUyQk9lZTI5JTJGVFBMRm5Db2VJcFpqdHhKQmV3YkV4dXNOWE4wbmpJVFZ1R1AzaEl3UmdBN0xMQkgzSzNkeUNVQUlFZGxoa0IxSUdOaGFnajcyb1JkVXFGJTJGd1ZWSjhza3VNV2cyTDBqVFNSUGJoeGFEdXhSdHpJdkxFcDFvUHRmaWdYdFprRnhaYXpGR0NMT3pmRHFLVjZlMGRHMkElM0QlM0QiLCJ3Y190cnVzdGVkX3Rva2VuIjoiMjU3MjM4NzMlMkNrbFolMkYyUUJTOTlJZU1kTSUyQkRFbVg4NUxYJTJCdiUyQnNMQzRlbmNoTWQ3N3kxN0klM0QifQ.sMJ-CNd7TRs3vBSU-JGn2Z_00FTAbTZzitpDV8hXqDEWXPb-H14QXynqfSPAoRt3Zlk6Pf_0O50-hRug5girzg'
     },
     context: ({ req }) => {
         console.log("Process ");
@@ -104,6 +121,7 @@ const server = new ApolloServer({
 
 const { url } = await startStandaloneServer(server,
     {
+        listen: { port: 5001 },
         context: async({req,res} ) => ({ 
                 serverRequest: req.headers
         })
